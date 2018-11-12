@@ -11,8 +11,8 @@ class LoginController extends Controller{
 
         public function login(){
             $codigo=$_POST['password'];
-            $trabajador_service=new TrabajadorService;
-            $trabajador=$trabajador_service->read($codigo);
+            /*$trabajador_service=new TrabajadorService;
+            $trabajador=$trabajador_service->read($codigo);*/
             /*if(isset($trabajador)){
                 Session::init();
                 Session::add('Trabajador',$trabajador);
@@ -20,6 +20,6 @@ class LoginController extends Controller{
             }else{
                 die('Usuario no registrado');
             }*/
-            var_dump($trabajador);
+            echo $codigo;
         }
 }
