@@ -1,6 +1,6 @@
 <?php
-include_once("../app/model/Trabajador.php");
-include_once("../app/service/TrabajadorService.php");
+/*include_once("../app/model/Trabajador.php");
+include_once("../app/service/TrabajadorService.php");*/
 
 class LoginController extends Controller{
         public function __construct(){}
