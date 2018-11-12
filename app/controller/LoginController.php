@@ -13,12 +13,13 @@ class LoginController extends Controller{
             $codigo=$_POST['password'];
             $trabajador_service=new TrabajadorService;
             $trabajador=$trabajador_service->read($codigo);
-            if(isset($trabajador)){
+            /*if(isset($trabajador)){
                 Session::init();
                 Session::add('Trabajador',$trabajador);
                 header('location: ../HomeController');
             }else{
                 die('Usuario no registrado');
-            }
+            }*/
+            var_dump($trabajador);
         }
 }
