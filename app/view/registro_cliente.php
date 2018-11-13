@@ -41,7 +41,7 @@
 
             <div class="datos">
                 <label for="Codigo de Tarjeta">Codigo de Tarjeta</label>
-                <input class="input-normal" name="Codigo_de_Tarjeta" value="<?=$datos[1]->getCod_tarjeta();?>" type="text" disabled> 
+                <input class="input-normal" name="Codigo_de_Tarjeta" type="text" value="<?=$datos[1]->getCod_tarjeta();?>"> 
             </div>
 
             <div class="botonera">
