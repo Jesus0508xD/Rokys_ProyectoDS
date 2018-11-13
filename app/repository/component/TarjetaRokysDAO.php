@@ -11,22 +11,22 @@ class TarjetaRokysDAO implements ITarjetaRokysDAO{
         $this->collection=$db->TarjetaRocky;
     }
     
-    public function create($tarjetaRokys){
+    public function create($tarjeta_rokys){
         $result=-1;
-        if(!empty($tarjetaRokys)){
+        if(!empty($tarjeta_rokys)){
             $this->collection->insertOne([
-                'UID'=>$tarjetaRokys->getCod_tarjeta(),
-                'estado'=>$tarjetaRokys->getEstado(),
-                'Saldo'=>$tarjetaRokys->getSaldo()
+                'UID'=>$tarjeta_rokys->getCod_tarjeta(),
+                'estado'=>$tarjeta_rokys->getEstado(),
+                'Saldo'=>$tarjeta_rokys->getSaldo()
             ]);
             $result=1;
         }
         return $result;
     }
 
-    public function read($clave){
+    public function read($id){
         $result=new TarjetaRokys;
-        $document=$this->collection->findOne(array('UID'=> $clave));
+        $document=$this->collection->findOne(array('UID'=> $id));
         if(isset($document)){
             $result->setCod_tarjeta($document['UID']);
             $result->setSaldo($document['Saldo']);
@@ -35,15 +35,15 @@ class TarjetaRokysDAO implements ITarjetaRokysDAO{
         return $result;
     }
     
-    public function update($tarjetaRokys){
+    public function update($tarjeta_rokys){
         $updateResult = $this->collection->updateOne(
-            [ 'UID' => $tarjetaRokys->getCod_tarjeta()],
-            [ '$set' => [ 'estado' => $tarjetaRokys->getEstado() ]]
+            [ 'UID' => $tarjeta_rokys->getCod_tarjeta()],
+            [ '$set' => [ 'estado' => $tarjeta_rokys->getEstado() ]]
         );
         return $updateResult;
     }
 
-    public function delete($clave){
+    public function delete($id){
         
     }
 

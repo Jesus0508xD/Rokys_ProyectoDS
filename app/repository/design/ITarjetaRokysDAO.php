@@ -4,5 +4,5 @@ interface ITarjetaRokysDAO {
     public function read($id);
     public function update($tarjeta_rokys);
     public function delete($id);
-    public function readAll($id);
+    public function readAll();
 }
