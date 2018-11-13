@@ -19,8 +19,13 @@ class RegistrarController extends Controller{
             $tarjeta_rokys_service=new TarjetaRokysService;
             $tarjeta_rokys=$tarjeta_rokys_service->getFirst();
             //var_dump($tarjeta_rokys);
-            $datos[]=$tarjeta_rokys;
-            $this->getView('registro_cliente',$datos);
+            if(isset($tarjeta_rokys)){
+                $datos[]=$tarjeta_rokys;
+                $this->getView('registro_cliente',$datos);
+            }else{
+                die('Se agotaron las tarjetas!!....');
+            }
+
     }
 
     public function agregar(){
