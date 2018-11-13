@@ -37,9 +37,9 @@ class RegistrarController extends Controller{
 
         if(count($rpta)==0){
             $tarjeta_rokys_service=new TarjetaRokysService;
-            //$tarjeta_rokys=$tarjeta_rokys_service->activarTarjeta($codigo_tarjeta);
-            //$cliente->setTarjetaRokys($tarjeta_rokys);
-            //$clienteService->update($cliente);
+            $tarjeta_rokys=$tarjeta_rokys_service->activarTarjeta();
+            $cliente->setTarjetaRokys($tarjeta_rokys);
+            $clienteService->update($cliente);
             echo "Usuario Registrado con Exito";
         }else{
             foreach($rpta as $cod_error=>$error){

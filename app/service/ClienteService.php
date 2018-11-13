@@ -13,7 +13,7 @@ class ClienteService implements GenericService{
     public function create($objeto){
         $error=array();
         if(strlen($objeto->getDni()) !=8){
-            $error[0] = "Cifras del Dni incorrectas";
+            $error[0] = "Cifras del DNI incorrectas";
         }else if(strlen($objeto->getNumero_telefonico())<7){
             $error[0] = "Numero Telefonico Incorrecto";
         }else{
