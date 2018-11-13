@@ -69,8 +69,9 @@ class TarjetaRokysDAO{
             $result->setCod_tarjeta($document['UID']);
             $result->setSaldo($document['Saldo']);
             $result->setEstado($document['estado']);
+            return $result;
         }
-        return $result;
+        return null;
     }
     
 
