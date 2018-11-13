@@ -43,7 +43,7 @@ class ClientesRokysController extends Controller{
         $cod=$_POST['DNI'];
         $clienteService=new ClienteService;
         $clientes=$clienteService->findByDNI($cod);
-        echo json_encode($clientes);
+        //echo json_encode($clientes);
     }
 
 
