@@ -50,7 +50,7 @@ class TarjetaRokys implements JsonSerializable{
 
 	public function jsonSerialize() {
         return [
-            'cod_tarjeta' => $this->cod_tarjeta,
+            'tarjeta' => $this->cod_tarjeta,
             'saldo' => $this->saldo,
             'fecha_vencimiento' => $this->fecha_vencimiento,
 			'estado' => $this->estado
