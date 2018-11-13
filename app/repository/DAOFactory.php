@@ -21,19 +21,19 @@ class DAOFactory{
         return new ClienteDAO;
     }
 
-    public function getTrabajadorDAO(){
+    public static function getTrabajadorDAO(){
         return  new TrabajadorDAO;
     }
 
-    public function getProductoDAO(){
+    public static function getProductoDAO(){
         return  new ProductoDAO;
     }
 
-    public function getPedidoDAO(){
+    public  static function getPedidoDAO(){
         return  new PedidoDAO;
     }
 
-    public function getTarjetaRokysDAO(){
+    public static function getTarjetaRokysDAO(){
         return  new TarjetaRokysDAO;
     }
 }
