@@ -30,27 +30,23 @@ class RegistrarController extends Controller{
         $num_telefonico=$_POST['Numero_Telefonico'];
         $direccion=$_POST['Direccion'];
         $correo=$_POST['Correo'];
-        $codigo_tarjeta=$_POST['Codigo_de_Tarjeta'];
-        
+
         $cliente=new Cliente($dni,$nombre,$apellidos,$num_telefonico,$correo,$direccion);
         $clienteService=new ClienteService;
         $rpta=$clienteService->create($cliente);
-        echo $rpta;
 
-        /*if($rpta>0){
+        if(count($rpta)==0){
             $tarjeta_rokys_service=new TarjetaRokysService;
-            $tarjeta_rokys=$tarjeta_rokys_service->activarTarjeta($codigo_tarjeta);
-            $
+            //$tarjeta_rokys=$tarjeta_rokys_service->activarTarjeta($codigo_tarjeta);
+            //$cliente->setTarjetaRokys($tarjeta_rokys);
+            //$clienteService->update($cliente);
+            echo "Usuario Registrado con Exito";
         }else{
-            switch ($rpta){
-                case 0:
-                    die('DNI incorrecto');
-                    break;
-                case -1:
-                    die('Numero Telefonico incorrecto');
-                    break;
+            foreach($rpta as $cod_error=>$error){
+                echo "Error numero: ".$cod_error." detalles: ".$error."<br>";
             }
-        }*/
+            echo "<br>Intentelo otra Vez";
+        }
 
     }
 }
