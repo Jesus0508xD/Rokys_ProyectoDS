@@ -11,7 +11,14 @@ class TarjetaRokysService implements GenericService{
         $this->tarjeta_rokys_dao=$DAOFactoryMongo::getTarjetaRokysDAO();
     }
     public function create($objeto){
-        $this->tarjeta_rokys_dao->create($objeto);
+        if(strlen($objeto->getDNI()) !=8){
+            return 0;
+        }else if(strlen($objeto->getNumero_telefonico())<7){
+            return -1; 
+        }else{
+            return $this->tarjeta_rokys_dao->create($objeto);
+        }
+        
     }
     public function update($objeto){
         

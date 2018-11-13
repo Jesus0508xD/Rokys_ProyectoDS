@@ -12,14 +12,14 @@ class TarjetaRokysDAO{
     }
     
     public function create($tarjetaRokys){
-        $result=false;
+        $result=-1;
         if(!empty($tarjetaRokys)){
             $this->collection->insertOne([
                 'UID'=>$tarjetaRokys->getCod_Tarjeta(),
                 'estado'=>$tarjetaRokys->getEstado(),
                 'Saldo'=>$tarjetaRokys->getSaldo()
             ]);
-            $result=true;
+            $result=1;
         }
         return $result;
     }
