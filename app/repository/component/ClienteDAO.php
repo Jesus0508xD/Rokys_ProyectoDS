@@ -20,7 +20,7 @@ class ClienteDAO implements IClienteDAO{
         $result=false;
         if(!empty($cliente)){
             $this->collection->insertOne([
-                '_id'=>$cliente->getDni(),
+                'DNI'=>$cliente->getDni(),
                 'Nombres'=>$cliente->getNombres(),
                 'Apellidos'=>$cliente->getApellidos(),
                 'NumTelefono'=>$cliente->getNumero_telefonico(),
@@ -62,12 +62,12 @@ class ClienteDAO implements IClienteDAO{
                  $result->setNombres($document['Nombres']);
                  $result->setApellidos($document['Apellidos']);
                  $result->setNumero_telefonico($document['NumTelefono']);
-                 $result->setDireccion($document['NumTelefono']);
+                 //$result->setDireccion($document['Direccion']);
                  $result->setCorreo($document['Correo']);
                  $cod_tarjeta=$document['Tarjeta'];
                  $tarjeta=$tarjetaDao->read($cod_tarjeta);
                  $result->setTarjetaRokys($tarjeta);
-                 $listaClientes[]=$result->jsonSerialize();
+                 $listaClientes[]=$result;
              }
          }
          return $listaClientes;
