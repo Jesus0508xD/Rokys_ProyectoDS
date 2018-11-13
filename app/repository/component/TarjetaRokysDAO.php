@@ -1,8 +1,9 @@
 <?php
 require_once('../app/repository/AccesoDB.php');
-include_once('../app/model/TarjetaRokys.php');
+require_once('../app/model/TarjetaRokys.php');
+require_once('../app/repository/design/ITarjetaRokysDAO.php');
 
-class TarjetaRokysDAO{
+class TarjetaRokysDAO implements ITarjetaRokysDAO{
     private $collection;
 
     public function __construct(){
@@ -56,6 +57,18 @@ class TarjetaRokysDAO{
         }
         return $listaTarjetasRFID;
     }
+
+    public function getFirst(){
+        $result=new TarjetaRokys;
+        $document=$this->collection->findOne(array('estado'=> 'INACTIVO'));
+        if(isset($document)){
+            $result->setCod_tarjeta($document['UID']);
+            $result->setSaldo($document['Saldo']);
+            $result->setEstado($document['estado']);
+        }
+        return $result;
+    }
+    
 
     public function __destruct(){}
 }

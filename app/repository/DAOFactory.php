@@ -1,5 +1,9 @@
 <?php 
 include_once("../app/repository/component/ClienteDAO.php");
+include_once("../app/repository/component/TarjetaRokysDAO.php");
+include_once("../app/repository/component/TrabajadorDAO.php");
+include_once("../app/repository/component/ProductoDAO.php");
+
 class DAOFactory{
     private static $daoFac;
 
@@ -29,4 +33,7 @@ class DAOFactory{
         return  new PedidoDAO;
     }
 
+    public function getTarjetaRokysDAO(){
+        return  new TarjetaRokysDAO;
+    }
 }

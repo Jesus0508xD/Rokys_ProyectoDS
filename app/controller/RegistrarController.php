@@ -11,9 +11,12 @@ class RegistrarController extends Controller{
             $trabajador=Session::get('Trabajador');
             $datos=array();
             $datos[]=$trabajador;
-            $clienteService=new ClienteService;
+            /*$clienteService=new ClienteService;
             $clientes=$clienteService->readAll();
-            $datos[]=$clientes;
+            $datos[]=$clientes;*/
+            $tarjeta_rokys_service=new TarjetaRokysService;
+            $tarjeta_rokys=$tarjeta_rokys_service->getFirst();
+            $datos[]=$tarjeta_rokys;
             $this->getView('registro_cliente',$datos);
     }
 
