@@ -74,7 +74,7 @@ function buscarMesa(codigo){
 //FETCH
 var formularioBuscador=document.getElementById('buscador');
 
-/*
+
 formularioBuscador.addEventListener('submit', (e)=>{
     e.preventDefault();
     var form=new FormData(formularioBuscador);
@@ -112,4 +112,4 @@ function llenarTabla(data){
             </tr>
         `
     }
-}*/
+}
