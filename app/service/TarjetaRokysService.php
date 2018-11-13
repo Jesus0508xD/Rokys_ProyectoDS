@@ -1,6 +1,6 @@
 <?php 
 require_once('GenericService.php');
-require_once("../app/repository/component/TarjetaDAO.php");
+require_once("../app/repository/component/TarjetaRokysDAO.php");
 require_once("../app/repository/DAOFactory.php");
 
 class TarjetaRokysService implements GenericService{
@@ -8,7 +8,7 @@ class TarjetaRokysService implements GenericService{
 
     public function __construct(){
         $DAOFactoryMongo=DAOFactory::getInstance();
-        $this->tarjeta_rokys_dao=$DAOFactoryMongo::getTarjetaRokysServiceDAO();
+        $this->tarjeta_rokys_dao=$DAOFactoryMongo::getTarjetaRokysDAO();
     }
     public function create($objeto){
         $this->tarjeta_rokys_dao->create($objeto);

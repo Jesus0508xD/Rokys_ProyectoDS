@@ -2,6 +2,7 @@
 include_once("../app/model/Cliente.php");
 include_once("../app/service/ClienteService.php");
 include_once("../app/model/Trabajador.php");
+include_once("../app/service/TarjetaRokysService.php");
 
 class RegistrarController extends Controller{
     public function RegistrarController(){}
