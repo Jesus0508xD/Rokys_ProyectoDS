@@ -27,7 +27,7 @@ class TarjetaRokysService implements GenericService{
     }
 
     public function getFirst(){
-        $this->tarjeta_rokys_dao->getFirst();
+        $this->tarjeta_rokys_dao->getFirst("INACTIVO");
     }
 
 }

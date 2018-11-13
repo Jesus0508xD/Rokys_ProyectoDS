@@ -58,9 +58,9 @@ class TarjetaRokysDAO{
         return $listaTarjetasRFID;
     }
 
-    public function getFirst(){
+    public function getFirst($cod){
         $result=new TarjetaRokys;
-        $document=$this->collection->findOne(array('estado'=> "INACTIVO"));
+        $document=$this->collection->findOne(array('estado'=> $cod));
         if(isset($document)){
             $result->setCod_tarjeta($document['UID']);
             $result->setSaldo($document['Saldo']);
