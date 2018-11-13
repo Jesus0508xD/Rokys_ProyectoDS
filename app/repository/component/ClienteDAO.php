@@ -21,7 +21,20 @@ class ClienteDAO implements IClienteDAO{
         );
         return $updateResult;
     }
-    public function read($id){}
+    public function read($id){
+        $result=new Cliente;
+        $document=$this->collection->findOne(array('Clave'=> $codigo));
+        if(isset($document)){
+            $result->setDni($document['_id']);
+            $result->setNombres($document['Nombres']);
+            $result->setApellidos($document['Apellidos']);
+            $result->setNumero_telefonico($document['NumTelefono']);
+            $result->setCod_trabajador($document['Clave']);
+            $result->setSueldo($document['Sueldo']);
+            $result->setRol($document['Cargo']);
+            return $result;
+        }
+    }
     public function delete($id){}
 
     public function create($cliente){
