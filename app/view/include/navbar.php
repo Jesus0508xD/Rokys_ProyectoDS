@@ -15,11 +15,13 @@
             <span>Ver Mesas</span>
             </a>
         </li>
+        <?php if($datos[0]->getRol()=="Administrador"):?>
         <li><a href="<?=RUTA_URL?>RegistrarController" class="opcion">
             <i class="fa fa-user-plus"></i>
             <span>Registrar Cliente</span>
             </a>
         </li>
+        <?php endif;?>
         <li><a href="<?=RUTA_URL?>LoginController" class="opcion">
             <i class="fa fa-sign-out"></i>
             <span>Salir</span>
