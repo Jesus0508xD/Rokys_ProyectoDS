@@ -85,7 +85,7 @@ formularioBuscador.addEventListener('keyup', (e)=>{
     e.preventDefault();
     var form=new FormData(formularioBuscador);
     console.log(form.get('DNI'));
-    fetch('http://localhost:8080/rokys_php/ClientesRokysController/filtrarFetch',{
+    fetch('https://mighty-ocean-96087.herokuapp.com/ClientesRokysController/filtrarFetch',{
         method: 'POST',
         body: form
     }).then(res => res.json())
