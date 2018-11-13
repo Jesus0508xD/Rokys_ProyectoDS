@@ -85,7 +85,10 @@ class ClienteDAO implements IClienteDAO{
                  $result->setNumero_telefonico($document['NumTelefono']);
                  $result->setDireccion($document['NumTelefono']);
                  $result->setCorreo($document['Correo']);
-
+                 $cod_tarjeta=$document['Tarjeta'];
+                 $tarjeta=$tarjetaDao->read($cod_tarjeta);
+                 $result->setTarjetaRokys($tarjeta);
+                 $listaClientes[]=$result->jsonSerialize();
                  $listaClientes[]=$result->jsonSerialize();
              }
          }
