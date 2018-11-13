@@ -84,7 +84,7 @@ formularioBuscador.addEventListener('submit', (e)=>{
 formularioBuscador.addEventListener('keyup', (e)=>{
     e.preventDefault();
     var form=new FormData(formularioBuscador);
-    console.log(form.get('DNI'));
+    //console.log(form.get('DNI'));
     fetch('https://mighty-ocean-96087.herokuapp.com/ClientesRokysController/filtrarFetch',{
         method: 'POST',
         body: form
@@ -107,9 +107,10 @@ function llenarTabla(data){
                 <td>${iterator.nombres}</td>
                 <td>${iterator.apellidos}</td>
                 <td>${iterator.dni}</td>
-                <td>${iterator.tarjeta}</td>
-                <td>${iterator.estado}</td>
             </tr>
         `
     }
 }
+
+//                <td>${iterator.tarjeta}</td>
+//<td>${iterator.estado}</td>
