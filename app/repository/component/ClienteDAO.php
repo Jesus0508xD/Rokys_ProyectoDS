@@ -33,7 +33,7 @@ class ClienteDAO implements IClienteDAO{
                 'NumTelefono'=>$cliente->getNumero_telefonico(),
                 'Correo'=>$cliente->getCorreo(),
                 'Direccion'=>$cliente->getDireccion(),
-                'Tarjeta'=>null
+                'Tarjeta'=>0
                 ]);
             $result=1;
         }
