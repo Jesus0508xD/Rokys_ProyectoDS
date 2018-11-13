@@ -43,7 +43,8 @@ class TarjetaRokysService implements GenericService{
         $tarjeta_rokys=$this->getFirst();
         if(isset($tarjeta_rokys)){
             $tarjeta_rokys->setEstado('INACTIVO');
-            return $this->update($tarjeta_rokys);
+            $this->update($tarjeta_rokys);
+            return $tarjeta_rokys;
         }
     }
 

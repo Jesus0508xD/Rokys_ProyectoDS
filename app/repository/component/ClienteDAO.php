@@ -23,15 +23,14 @@ class ClienteDAO implements IClienteDAO{
     }
     public function read($id){
         $result=new Cliente;
-        $document=$this->collection->findOne(array('Clave'=> $codigo));
+        $document=$this->collection->findOne(array('DNI'=> $codigo));
         if(isset($document)){
-            $result->setDni($document['_id']);
+            $result->setDni($document['DNI']);
             $result->setNombres($document['Nombres']);
             $result->setApellidos($document['Apellidos']);
             $result->setNumero_telefonico($document['NumTelefono']);
-            $result->setCod_trabajador($document['Clave']);
-            $result->setSueldo($document['Sueldo']);
-            $result->setRol($document['Cargo']);
+            $result->setDireccion($document['NumTelefono']);
+            $result->setCorreo($document['Correo']);
             return $result;
         }
     }
@@ -47,7 +46,6 @@ class ClienteDAO implements IClienteDAO{
                 'NumTelefono'=>$cliente->getNumero_telefonico(),
                 'Correo'=>$cliente->getCorreo(),
                 'Direccion'=>$cliente->getDireccion(),
-                'Tarjeta'=>0
                 ]);
             $result=1;
         }
