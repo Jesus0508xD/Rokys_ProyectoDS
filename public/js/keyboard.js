@@ -111,5 +111,6 @@ function llenarTabla(data){
                 <td>${iterator.estado}</td>
             </tr>
         `
+        i++;
     }
 }
