@@ -13,29 +13,6 @@ class ClienteDAO implements IClienteDAO{
         $this->collection=$bd->Persona;
     }
 
-    public function update($cliente){
-        $cod=$cliente->getTarjetaRokys()->getCod_tarjeta();
-        $updateResult = $this->collection->updateOne(
-            [ 'DNI' => $cliente->getDni()],
-            [ '$set' => [ 'Tarjeta' => $cod]]
-        );
-        return $updateResult;
-    }
-    public function read($id){
-        $result=new Cliente;
-        $document=$this->collection->findOne(array('DNI'=> $codigo));
-        if(isset($document)){
-            $result->setDni($document['DNI']);
-            $result->setNombres($document['Nombres']);
-            $result->setApellidos($document['Apellidos']);
-            $result->setNumero_telefonico($document['NumTelefono']);
-            $result->setDireccion($document['NumTelefono']);
-            $result->setCorreo($document['Correo']);
-            return $result;
-        }
-    }
-    public function delete($id){}
-
     public function create($cliente){
         $result=-10;
         if(!empty($cliente)){
@@ -51,6 +28,31 @@ class ClienteDAO implements IClienteDAO{
         }
         return $result;
     }
+
+    public function read($id){
+        $result=new Cliente;
+        $document=$this->collection->findOne(array('DNI'=> $codigo));
+        if(isset($document)){
+            $result->setDni($document['DNI']);
+            $result->setNombres($document['Nombres']);
+            $result->setApellidos($document['Apellidos']);
+            $result->setNumero_telefonico($document['NumTelefono']);
+            $result->setDireccion($document['NumTelefono']);
+            $result->setCorreo($document['Correo']);
+            return $result;
+        }
+    }
+
+    public function update($cliente){
+        $cod=$cliente->getTarjetaRokys()->getCod_tarjeta();
+        $updateResult = $this->collection->updateOne(
+            [ 'DNI' => $cliente->getDni()],
+            [ '$set' => [ 'Tarjeta' => $cod]]
+        );
+        return $updateResult;
+    }
+    
+    public function delete($id){}
 
     public function readAll(){
        $listaClientes=array();

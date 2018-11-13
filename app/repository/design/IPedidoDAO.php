@@ -1,8 +1,8 @@
 <?php
 interface ITarjetaRokysDAO {
-    public function create($tarjeta_rokys);
+    public function create($pedido);
     public function read($id);
-    public function update($tarjeta_rokys);
+    public function update($pedido);
     public function delete($id);
     public function readAll($id);
 }
