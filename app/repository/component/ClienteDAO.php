@@ -32,8 +32,8 @@ class ClienteDAO implements IClienteDAO{
                 'Apellidos'=>$cliente->getApellidos(),
                 'NumTelefono'=>$cliente->getNumero_telefonico(),
                 'Correo'=>$cliente->getCorreo(),
-                'Direccion'=>$cliente->getDireccion()//,
-                //'Tarjeta'=>$cliente->getTarjeta()->getCod_tarjeta()
+                'Direccion'=>$cliente->getDireccion(),
+                'Tarjeta'=>null
                 ]);
             $result=1;
         }

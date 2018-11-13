@@ -34,7 +34,7 @@ class RegistrarController extends Controller{
         $cliente=new Cliente($dni,$nombre,$apellidos,$num_telefonico,$correo,$direccion);
         $clienteService=new ClienteService;
         $rpta=$clienteService->create($cliente);
-        if($rpta==1){
+        if(count($rpta)==0 || $rpta==1){
             $tarjeta_rokys_service=new TarjetaRokysService;
             $tarjeta_rokys=$tarjeta_rokys_service->activarTarjeta();
             $cliente->setTarjetaRokys($tarjeta_rokys);
