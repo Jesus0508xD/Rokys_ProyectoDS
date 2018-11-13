@@ -18,6 +18,7 @@ class ClienteDAO implements IClienteDAO{
             [ 'DNI' => $cliente->getDni()],
             [ '$set' => [ 'Tarjeta' => $cliente->getTarjetaRokys()->getCod_tarjeta() ]]
         );
+        return $updateResult;
     }
     public function read($id){}
     public function delete($id){}

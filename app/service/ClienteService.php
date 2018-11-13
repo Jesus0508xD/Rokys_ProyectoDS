@@ -22,7 +22,7 @@ class ClienteService implements GenericService{
         return $error;
     }
     public function update($objeto){
-        
+        return $this->clienteDao->update($objeto);
     }
     public function read($id){
         return $this->clienteDao->read($id);
