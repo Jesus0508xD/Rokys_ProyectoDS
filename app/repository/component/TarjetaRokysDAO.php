@@ -35,8 +35,12 @@ class TarjetaRokysDAO{
         return $result;
     }
     
-    public function update($clave){
-
+    public function update($tarjetaRokys){
+        $updateResult = $this->collection->updateOne(
+            [ 'UID' => $tarjetaRokys->getCod_tarjeta()],
+            [ '$set' => [ 'estado' => $tarjetaRokys->getEstado() ]]
+        );
+        return $updateResult;
     }
 
     public function delete($clave){

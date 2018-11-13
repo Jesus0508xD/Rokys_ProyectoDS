@@ -30,4 +30,20 @@ class TarjetaRokysService implements GenericService{
         return $this->tarjeta_rokys_dao->getFirst("INACTIVO");
     }
 
+    public function activarTarjeta($id){
+        $tarjeta_rokys=read($id);
+        if(isset($tarjeta_rokys)){
+            $tarjeta_rokys->setEstado('OFF');
+            $this->update($tarjeta_rokys);
+        }
+    }
+
+    public function desactivarTarjeta($id){
+        $tarjeta_rokys=read($id);
+        if(isset($tarjeta_rokys)){
+            $tarjeta_rokys->setEstado('INACTIVO');
+            $this->update($tarjeta_rokys);
+        }
+    }
+
 }

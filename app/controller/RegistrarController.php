@@ -34,5 +34,7 @@ class RegistrarController extends Controller{
         $cliente=new Cliente($dni,$nombre,$apellidos,$num_telefonico,$correo,$direccion);
         $clienteService=new ClienteService;
         $clienteService->create($cliente);
+        /*$tarjeta_rokys_service=new TarjetaRokysService;
+        $tarjeta_rokys=$tarjeta_rokys_service->activarTarjeta($codigo_tarjeta);*/
     }
 }
