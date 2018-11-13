@@ -39,7 +39,7 @@ class ClienteDAO implements IClienteDAO{
         if(isset($cursor)){
             foreach($cursor as $document){
                 $result=new Cliente;
-                $result->setDni($document['_id']);
+                $result->setDni($document['DNI']);
                 $result->setNombres($document['Nombres']);
                 $result->setApellidos($document['Apellidos']);
                 $result->setNumero_telefonico($document['NumTelefono']);
@@ -58,7 +58,7 @@ class ClienteDAO implements IClienteDAO{
          if(isset($cursor)){
              foreach($cursor as $document){
                  $result=new Cliente;
-                 $result->setDni($document['_id']);
+                 $result->setDni($document['DNI']);
                  $result->setNombres($document['Nombres']);
                  $result->setApellidos($document['Apellidos']);
                  $result->setNumero_telefonico($document['NumTelefono']);
@@ -75,11 +75,11 @@ class ClienteDAO implements IClienteDAO{
 
     public function findbyDNI($codigo){
         $listaClientes=array();
-         $cursor=$this->collection->find(array('_id'=> array('$regex' => $codigo)));
+         $cursor=$this->collection->find(array('dni'=> array('$regex' => $codigo)));
          if(isset($cursor)){
              foreach($cursor as $document){
                  $result=new Cliente;
-                 $result->setDni($document['_id']);
+                 $result->setDni($document['DNI']);
                  $result->setNombres($document['Nombres']);
                  $result->setApellidos($document['Apellidos']);
                  $result->setNumero_telefonico($document['NumTelefono']);
