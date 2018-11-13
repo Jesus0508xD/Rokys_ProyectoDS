@@ -7,7 +7,7 @@
             </ol> 
         </div>
         <div class="clientes-container">
-            <form id="buscador" class="container-opciones" method="POST" action="<?=RUTA_URL?>ClientesRokysController/filtrarfetch">
+            <form id="buscador" class="container-opciones" method="POST" action="<?=RUTA_URL?>ClientesRokysController/filtrarFetch">
                 <label for="cliente" >
                     Ingrese el DNI: <input class="input-normal" name="DNI" type="text"/>
                 </label>

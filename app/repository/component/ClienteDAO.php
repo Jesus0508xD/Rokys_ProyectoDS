@@ -75,7 +75,7 @@ class ClienteDAO implements IClienteDAO{
 
     public function findbyDNI($codigo){
         $listaClientes=array();
-         $cursor=$this->collection->find(array('dni'=> array('$regex' => $codigo)));
+         $cursor=$this->collection->find(array('DNI'=> array('$regex' => $codigo)));
          if(isset($cursor)){
              foreach($cursor as $document){
                  $result=new Cliente;

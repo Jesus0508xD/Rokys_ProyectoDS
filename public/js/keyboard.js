@@ -99,6 +99,7 @@ function llenarTabla(data){
     var tablaCuerpo=document.getElementById('tbody');
     tablaCuerpo.innerHTML='';
     let i=0;
+    //console.log(data);
     for(let iterator of data){
         tablaCuerpo.innerHTML+=`
             <tr>
