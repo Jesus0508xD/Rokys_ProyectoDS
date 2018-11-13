@@ -3,7 +3,7 @@ require_once('../app/repository/AccesoDB.php');
 require_once('../app/model/TarjetaRokys.php');
 require_once('../app/repository/design/ITarjetaRokysDAO.php');
 
-class TarjetaRokysDAO implements ITarjetaRokysDAO{
+class TarjetaRokysDAO{
     private $collection;
 
     public function __construct(){
