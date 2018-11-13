@@ -17,7 +17,7 @@ class ClienteDAO implements IClienteDAO{
     public function delete($id){}
 
     public function create($cliente){
-        $result=false;
+        $result=-10;
         if(!empty($cliente)){
             $this->collection->insertOne([
                 'DNI'=>$cliente->getDni(),
@@ -25,10 +25,10 @@ class ClienteDAO implements IClienteDAO{
                 'Apellidos'=>$cliente->getApellidos(),
                 'NumTelefono'=>$cliente->getNumero_telefonico(),
                 'Correo'=>$cliente->getCorreo(),
-                'Direccion'=>$cliente->getDireccion(),
-                'Tarjeta'=>$cliente->getTarjeta()->getCod_tarjeta()
+                'Direccion'=>$cliente->getDireccion()//,
+                //'Tarjeta'=>$cliente->getTarjeta()->getCod_tarjeta()
                 ]);
-            $result=true;
+            $result=1;
         }
         return $result;
     }

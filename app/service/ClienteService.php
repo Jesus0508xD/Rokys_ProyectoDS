@@ -11,7 +11,13 @@ class ClienteService implements GenericService{
         $this->clienteDao=$DAOFactoryMongo::getClienteDAO();
     }
     public function create($objeto){
-        $this->clienteDao->create($objeto);
+        if(strlen($objeto->getDNI()) !=8){
+            return 0;
+        }else if(strlen($objeto->getNumero_telefonico())<7){
+            return -1; 
+        }else{
+            return $this->clienteDao->create($objeto);
+        }
     }
     public function update($objeto){
         

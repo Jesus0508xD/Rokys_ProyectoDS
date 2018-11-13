@@ -31,11 +31,12 @@ class RegistrarController extends Controller{
         $direccion=$_POST['Direccion'];
         $correo=$_POST['Correo'];
         $codigo_tarjeta=$_POST['Codigo_de_Tarjeta'];
+        
         $cliente=new Cliente($dni,$nombre,$apellidos,$num_telefonico,$correo,$direccion);
         $clienteService=new ClienteService;
         $rpta=$clienteService->create($cliente);
         echo $rpta;
-        
+
         /*if($rpta>0){
             $tarjeta_rokys_service=new TarjetaRokysService;
             $tarjeta_rokys=$tarjeta_rokys_service->activarTarjeta($codigo_tarjeta);
