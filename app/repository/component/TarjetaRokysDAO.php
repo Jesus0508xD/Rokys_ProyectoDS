@@ -15,7 +15,7 @@ class TarjetaRokysDAO{
         $result=-1;
         if(!empty($tarjetaRokys)){
             $this->collection->insertOne([
-                'UID'=>$tarjetaRokys->getCod_Tarjeta(),
+                'UID'=>$tarjetaRokys->getCod_tarjeta(),
                 'estado'=>$tarjetaRokys->getEstado(),
                 'Saldo'=>$tarjetaRokys->getSaldo()
             ]);

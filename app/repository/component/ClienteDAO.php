@@ -14,9 +14,10 @@ class ClienteDAO implements IClienteDAO{
     }
 
     public function update($cliente){
+        $cod=$cliente->getTarjetaRokys()->getCod_tarjeta();
         $updateResult = $this->collection->updateOne(
             [ 'DNI' => $cliente->getDni()],
-            [ '$set' => [ 'Tarjeta' => $cliente->getTarjetaRokys()->getCod_tarjeta() ]]
+            [ '$set' => [ 'Tarjeta' => $cod]]
         );
         return $updateResult;
     }
