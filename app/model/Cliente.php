@@ -45,9 +45,9 @@ class Cliente extends Persona implements JsonSerializable{
             'apellidos' => $this->apellidos,
 			'numero_telefonico' => $this->numero_telefonico,
 			'correo' => $this->correo,
-			'direccion' => $this->direccion//,
-			//'tarjeta'=> $this->tarjeta_rokys->getCod_tarjeta(),
-			//'estado'=>$this->tarjeta_rokys->getEstado()
+			'direccion' => $this->direccion,
+			'tarjeta'=> $this->tarjeta_rokys->getCod_tarjeta(),
+			'estado'=>$this->tarjeta_rokys->getEstado()
         ];
     }
 

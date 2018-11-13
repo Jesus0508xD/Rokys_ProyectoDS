@@ -106,11 +106,10 @@ function llenarTabla(data){
                 <td>${i}</td>
                 <td>${iterator.nombres}</td>
                 <td>${iterator.apellidos}</td>
-                <td>${iterator.dni}</td>
+                <td>${iterator.dni}</td>  
+                <td>${iterator.tarjeta}</td>
+                <td>${iterator.estado}</td>
             </tr>
         `
     }
 }
-
-//                <td>${iterator.tarjeta}</td>
-//<td>${iterator.estado}</td>
