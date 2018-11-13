@@ -1,5 +1,5 @@
 <?php
-class TarjetaRokys{
+class TarjetaRokys implements JsonSerializable{
     private $cod_tarjeta;
     private $saldo;
     private $fecha_vencimiento;
@@ -47,6 +47,15 @@ class TarjetaRokys{
 	public function setCliente($cliente){
 		$this->cliente=$cliente;
 	}
+
+	public function jsonSerialize() {
+        return [
+            'cod_tarjeta' => $this->cod_tarjeta,
+            'saldo' => $this->saldo,
+            'fecha_vencimiento' => $this->fecha_vencimiento,
+			'estado' => $this->estado
+        ];
+    }
 
     public function __destruct(){}
 }

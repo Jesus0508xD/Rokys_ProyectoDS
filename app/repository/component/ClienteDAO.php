@@ -67,7 +67,7 @@ class ClienteDAO implements IClienteDAO{
                  $cod_tarjeta=$document['Tarjeta'];
                  $tarjeta=$tarjetaDao->read($cod_tarjeta);
                  $result->setTarjetaRokys($tarjeta);
-                 $listaClientes[]=$result;
+                 $listaClientes[]=$result->jsonSerialize();
              }
          }
          return $listaClientes;
